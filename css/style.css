@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    background: linear-gradient(rgba(0, 0, 0, 0.885), rgba(0, 0, 0, 0.332)), url('/img/bgHrz-game-store.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.885), rgba(0, 0, 0, 0.332)), url('../img/bgHrz-game-store.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
