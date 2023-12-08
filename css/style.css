@@ -1,0 +1,428 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(rgba(0, 0, 0, 0.885), rgba(0, 0, 0, 0.332)), url('/img/bgHrz-game-store.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+}
+
+#header {
+    height: 70px;
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: #ffffff;
+}
+
+.logoGames img {
+    height: 2em;
+    max-width: 90%;
+ }
+
+#logo {
+    border-bottom: none;
+}
+
+a {
+    color: #eaeaea;
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: 0.4s;
+}
+
+a:hover {
+    color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+/* ----------------------------------Responsive Menu------------------------------- */
+
+#menu {
+    display: flex;
+    list-style: none;
+    gap: .5em;
+}
+
+#menu a {
+    display: block;
+    padding: .5em;
+    text-align: center;
+}
+
+#btn-mobile {
+    display: flex;
+}
+
+@media (min-width: 601px) {
+    button#btn-mobile {
+        display: none;
+    }  
+}
+
+@media (max-width: 600px) {
+    #btn-mobile {
+        display: block;
+    }
+
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 124px;
+        right: 0px;
+        background: linear-gradient(rgba(0, 0, 0, 0.289), rgba(0, 0, 0, 0));
+        z-index: 1000;
+        height: 0px;
+        transition: .6s;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+    
+    #nav.active #menu {
+        height: calc(90vh - 40px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    #menu a {
+        padding: 1rem 1rem;
+        margin: 0;
+    }
+
+    #btn-mobile {
+        background-color: #ffffff00;
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 2rem;
+        border: none;
+        background-color: none;
+        cursor: pointer;
+        gap: 5rem;
+    }
+
+    #hamburger {
+        border-top: 2px solid;
+        width: 20px;
+        color: #ffffff;
+    }
+    
+    #hamburger::after, #hamburger::before {
+        content: '';
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    #nav.active #hamburger {
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburger::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #hamburger::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+ }
+
+/* ---------------------------------Main Content------------------------------ */
+
+ .mainContent {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5em;
+    padding: 60px;
+ }
+
+ .mainContent img {
+    border-radius: 20px;
+ }
+
+ .mainContentText {
+    display: flex;
+    gap: 0.5em;
+    flex-direction: column;
+    padding: 1em;
+ }
+
+ .mainTitle {
+    font-size: 1.5em;
+    font-weight: 800;
+ }
+
+ .mainDescription-1 {
+    font-size: 1em;
+    font-weight: 500;
+ }
+
+ .mainDescription-2 {
+    font-size: 0.7em;
+    font-weight: 500;
+    margin-bottom: 0.5em;
+ }
+
+ .btnContainer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+ }
+ 
+ .btn-read-more {
+     display: flex;
+     justify-content: center;
+     gap: 1em;
+     background-color: rgb(37, 37, 173);
+     color: #fefefe;
+     font-size: 0.8em;
+     font-weight: 500;
+     padding: 0.8em;
+     margin-bottom: 1.5em;
+     border-radius: 5px;
+     border: none;
+     transition: 0.3s;
+     cursor: pointer;
+    }
+    
+    .btn-read-more:hover {
+        background-color: rgb(33, 33, 248);
+    }
+    
+    .btnContainer .bi-arrow-right-short {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+
+    .logoGames img {
+        margin-right: 1em;
+    }
+
+    section .container {
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        text-transform: uppercase;
+        font-weight: 800;
+        padding: 0.3em;
+    }
+
+    h3 {
+        font-size: 1em;
+        text-transform: uppercase;
+        font-weight: 800;
+        padding: 0.5em;
+    }
+
+    h5 {
+        font-size: 1em;
+        font-weight: 800;
+        text-transform: uppercase;
+        margin-bottom: 1em;
+    }
+
+    .contact-form {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    form {
+        padding: 0.5em;
+        margin-top: 1em;
+        border-radius: 10px;
+        width: 350px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.5em;
+        padding: 0.5em;
+        font-size: 0.8em;
+        width: 100%;
+        outline: none;
+        resize: none;
+    }
+
+    .contact-form textarea {
+        height: 150px;
+    }
+
+    .contact-form button {
+        display: flex;
+        justify-content: center;
+        background-color: rgb(37, 37, 173);
+        color: #fefefe;
+        font-size: 0.9em;
+        padding: 10px 15px;
+        border-radius: 3px;
+        border: none;
+        margin-top: 1em;
+        width: 100%;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .contact-form button:hover {
+        background-color: rgb(33, 33, 248);
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        gap: 2em;
+    }
+
+    .social-media img {
+        height: 30px;
+        width: 30x;
+    }
+
+    footer {
+        background-color: #000;
+        color: #fefefe;
+        text-align: center;
+        width: 100%;
+        padding: 1.5em;
+    }
+
+    footer p {
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+ /* ---------------------------------Media Query (Mobile)--------------------------------- */
+
+ @media (max-width: 450px) {
+
+    header a {
+        text-decoration: none;
+        border-bottom: none!important;
+    }
+
+    .mainContent {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    #mainBannerFull {
+        height: auto;
+        width: 100%;
+    }
+
+    .mainTitle {
+        text-align: center;
+    }
+
+    .mainDescription-1 {
+        width: 500px;
+        font-size: 0.9em;
+        width: 100%;
+        text-align: center;
+
+    }
+
+    .mainDescription-2 {
+        display: none;
+    }
+
+    .btnContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 24px;
+    }
+
+    .btnContainer button {
+        font-size: 1em;
+    }
+
+    .logoGames {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 5em;
+        gap: 2em;
+    }
+
+    .logoGames img {
+        height: 60px;
+        width: 50%;
+        margin-bottom: 2em;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .contact-form {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-form button {
+        margin-bottom: 2.5em;
+    }
+
+    .social-media {
+        margin-bottom: 2.5em;
+    }
+
+    footer {
+        background-color: #000;
+        color: #fefefe;
+        text-align: center;
+        width: 100%;
+    }
+
+    footer p {
+        font-size: 0.6em;
+    }
+
+ }
